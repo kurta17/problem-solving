@@ -6,6 +6,7 @@ def mergesort(arr,start,end):
     mergesort(arr, mid, end)
     p1,p2 = start,mid
     res = []
+
     while p1 < mid and p2 < end:
         if arr[p1] < arr[p2]:
             res.append(arr[p1])
@@ -13,6 +14,7 @@ def mergesort(arr,start,end):
         else:
             res.append(arr[p2])
             p2 += 1
+            
     while p1 < mid:
         res.append(arr[p1])
         p1 += 1

@@ -29,6 +29,6 @@ def counting_sort(arr):
     return output
 
 # Example usage:
-arr = [4, 2, 2, 8, 3, 3, 1]
+arr = [4, 2, 22, 8, 3, 3, 1]
 sorted_arr = counting_sort(arr)
 print("Sorted array:", sorted_arr)
