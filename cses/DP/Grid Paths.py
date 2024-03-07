@@ -13,8 +13,8 @@ for i in range(n):
                 dp[i][j] += dp[i][j - 1]
             dp[i][j] %= 1000000007
 
-# print(dp[0])
-# print(dp[1])
-# print(dp[2])
-# print(dp[3])
+print(dp[0])
+print(dp[1])
+print(dp[2])
+print(dp[3])
 print(dp[-1][-1])
