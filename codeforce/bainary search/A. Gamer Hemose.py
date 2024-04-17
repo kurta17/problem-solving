@@ -1,5 +1,7 @@
+import sys
+input = sys.stdin.readline
 t = int(input())
-
+ 
 for _ in range(t):
     n, h = map(int, input().split())
     d = list(map(int, input().split()))
