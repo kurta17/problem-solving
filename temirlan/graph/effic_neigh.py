@@ -1,5 +1,4 @@
-n,m = map(int, input().split())
-s = int(input())
+n,m,s = map(int, input().split())
 friends = [[] for _ in range(n+1)]
 
 def binary_search(y,friends_x):
