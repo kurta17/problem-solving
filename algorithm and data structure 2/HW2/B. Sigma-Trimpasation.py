@@ -14,55 +14,31 @@ estimate_execution_time = False
 quantum_a = 7**5
 quantum_m = 2**31 - 1
 
-def counting_sort(x):
-    n = len(x)
-    m = max(x) + 1
-    counter = [0] * m
-
-    for i in range(n):
-        ind = x[i]
-        counter[ind] += 1
-
-    res = []
-    for i in range(m):
-        for k in range(counter[i]):
-            res.append(i)
-
-    return res 
-
-def analyze_trimpazation(n, m, q0):
-    '''
-    This function generates data with given parameters
-    and calculates desired Y value.
-
-    You need to modify it to make it execute faster.
-    You can check your progress using estimate_execution_time flag
-    at the top of the file.
-    '''
+def counting_sort_sum(n, m, q0):
     m_div2 = m // 2
     q = q0
 
     # generating x data:
-    x = []
+    x = [0] * m
     for i in range(n):
-        x_i = q % m - m_div2
-        x.append(x_i)
+        x[q % m] += 1
         q = ((q * quantum_a) % quantum_m)
-
-    # sorting x data:
-    counting_sort(x)    
 
     # calculating sum:
     res = 0
-    for i, v in enumerate(x):
-        res += (i + 1) * v
+    i = 0
+    for j in range(m):
+        for z in range(x[j]):
+            res += (i + 1) * (j - m_div2)
+            i += 1
 
     return res
+
 
 
 if __name__ == '__main__':
     N, M, q0 = map(int, input().split())
     t = time()
-    print(analyze_trimpazation(N, M, q0))
+    print(counting_sort_sum(N, M, q0))
     if estimate_execution_time:
         print(f'Execution time = {time() - t:.8f} seconds')
