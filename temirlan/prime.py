@@ -10,11 +10,11 @@ m = int(input())
 count = 0
 num = 1
 
-while count < m:
-    num += 1
-    if is_prime(num):
-        count += 1
+# while count < m:
+#     num += 1
+#     if is_prime(num):
+#         count += 1
 
-print(num) 
+print(is_prime(num)) 
 
 
