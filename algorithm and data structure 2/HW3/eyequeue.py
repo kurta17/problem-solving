@@ -56,12 +56,11 @@ class Deque:
     def len(self):
         return self.count
 
-
 n = int(input())
 d = [Deque() for _ in range(n)]
 
-while True:
-    a = input()
+for line in sys.stdin:
+    a = line.strip()
     if a[0] == '#':
         break
     elif a[0] == '+':
@@ -82,4 +81,3 @@ while True:
         b = int(parts[1])
         c = int(parts[2])
         d[b].push_mid(c)
-        
