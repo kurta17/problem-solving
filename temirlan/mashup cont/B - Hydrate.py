@@ -1,11 +1,9 @@
 import math
 
-A,B,C,D = map(int, input().split())
-if D*C -B <=0:
+a,b,c,d = map(int, input().split())
+if d * c - b <= 0:
     print(-1)
 else:
-    if A % (D*C -B) == 0:
-      print(A//(D*C -B))
-    else:
-       print(math.ceil(A/(D*C -B)))
+    print(math.ceil(a/(d*c-b)))
+    
 
